@@ -11,22 +11,22 @@ system("/usr/bin/clear");
 print "$prompt";
 
 while (<>) {
-	chomp;
-	my $input = $_;
-	if ( $input eq 'clear' ) { 
-	    system("/usr/bin/clear"); 
-		print "$prompt";
-		next;
+    chomp;
+    my $input = $_;
+    if ( $input eq 'clear' ) { 
+        system("/usr/bin/clear"); 
+        print "$prompt";
+        next;
     } elsif ( $input eq 'exit' ) {
-		last;
-	}
-	show(evaluate(parse($input)));
-	print "$prompt"; 
+        last;
+    }
+    show(evaluate(parse($input)));
+    print "$prompt"; 
 }
 
 print "\n";
 
 sub show {
-	chomp($_[0]);
+    chomp($_[0]);
     print "$_[0]\n";
 }
