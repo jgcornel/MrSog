@@ -73,7 +73,7 @@ sub parse {
 
     return ($cmd, $elt, $id, $par, $val) if $cmd eq "lit";
     
-       $id = $elts{$elt}{func}($par, $val);
+    $id = $elts{$elt}{func}($par, $val);
     
     return ("err", "Unsufficient info") unless defined $id;
     return ($cmd, $elt, $id, $par, $val);
